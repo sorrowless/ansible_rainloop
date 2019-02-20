@@ -2,7 +2,7 @@
 - name: Install packages for RainLoop
   package:
     name: "{{ item }}"
-    state: latest
+    state: present
   with_items:
     - nginx
     - php
