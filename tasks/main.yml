@@ -34,18 +34,3 @@
     owner: www-data
     group: www-data
     recurse: yes
-
-- name: Install nginx template for rainloop
-  template:
-    src: nginx/mail.rainloop.conf
-    dest: /etc/nginx/sites-available/mail.rainloop.conf
-  notify:
-    - Restart Nginx
-
-- name: Create symlink to nginx template
-  file:
-    src: /etc/nginx/sites-available/mail.rainloop.conf
-    dest: /etc/nginx/sites-enabled/mail.rainloop.conf
-    state: link
-  notify:
-    - Restart Nginx
